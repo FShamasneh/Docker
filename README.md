@@ -29,7 +29,7 @@
 - Stopping containers gracefully. docker container stop sends a `SIGTERM` signal to the main application process inside the container (PID 1). As we said, this gives the process a chance to clean things up and gracefully shut itself down. If it doesn’t exit within 10 seconds, it will receive a `SIGKILL`. This is effectively the bullet to the head. But hey, it got 10 seconds to sort itself out first.
 
 ## Dockerfile
-`Big means slow. Big means hard to work with. And big means more potential vulnerabilities and possibly a bigger attack surface!`
+~~Big means slow. Big means hard to work with. And big means more potential vulnerabilities and possibly a bigger attack surface!~~
 ### Commands
 - `docker image build` is the command that reads a Dockerfile and containerizes an application. The `-t` flag tags the image, and the `-f` flag lets you specify the name and location of the Dockerfile. With the -f flag, it is possible to use a Dockerfile with an arbitrary name and in an arbitrary location. The build context is where your application files exist, and this can be a directory on your local Docker host or a remote Git repo.
 - The `FROM` instruction in a Dockerfile specifies the base image for the new image you will build. It is usually the first instruction in a Dockerfile and a best-practice is to use images from official repos on this line. The `RUN` instruction in a Dockerfile allows you to run commands inside the image. Each `RUN` instruction creates a single new layer.
