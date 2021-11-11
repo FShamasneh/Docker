@@ -57,4 +57,20 @@ case sensitive, but it’s normal practice to write them in UPPERCASE. Some inst
 - Examples that create metadata include `EXPOSE , WORKDIR , ENV , and ENTRYPOINT`.
 - The basic premise is this — if an instruction is adding **content** such as files and programs to the image, it will create a new layer. If it is adding **instructions** on how to build the image and run the application, it will create metadata.
 
-
+## Docker Compose
+### Commands
+### Notes
+- *Docker Compose* deploys and manages multi-container applications on Docker nodes running in single-engine mode.
+- *Docker Compose* lets you describe an entire app in a single declarative configuration file, and deploy it with a single command.
+- Compose uses YAML files to define multi-service applications. YAML is a subset of JSON, so you can also use JSON.
+- The default name for a Compose YAML file is `docker-compose.yml` . However, you can use the `-f`flag to specify custom filenames.
+- The first thing to note is that the file has 4 top-level keys:
+* `version`
+* `services`
+* `networks`
+* `volumes`
+- The `version` key is mandatory, and it’s always the first line at the root of the file. This defines the version of the
+Compose file format (basically the API). You should normally use the latest version. (It’s important to note that the versions key does not define the version of Docker Compose or the Docker Engine.)
+- The top-level `services` key is where you define the different application microservices.
+- The top-level `networks` key tells Docker to create new networks. By default, Compose will create `bridge networks`. These are single-host networks that can only connect containers on the same Docker host. However, you can use the driver property to specify different network types.
+- The top-level `volumes` key is where you tell Docker to create new volumes.
